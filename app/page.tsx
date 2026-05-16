@@ -5,6 +5,7 @@ import SimpleCounter from "@/app/components/SimpleCounter";
 import CounterWithReducer from "@/app/components/CounterWithReducer";
 import ContextDemo from "@/app/components/context/ContextDemo";
 import MyThemeContextDemo from "@/app/components/context/MyThemeContextDemo";
+import TodoWithReducer from "@/app/components/reducer/TodoWithReducer";
 
 export default function IndexPage() {
   return (<div>
@@ -12,7 +13,8 @@ export default function IndexPage() {
     {/*<SimpleCounter />*/}
     {/*<CounterWithReducer />*/}
     {/*<ContextDemo />*/}
-    <MyThemeContextDemo />
+    {/*<MyThemeContextDemo />*/}
+    <TodoWithReducer />
   </div>)
 }
 

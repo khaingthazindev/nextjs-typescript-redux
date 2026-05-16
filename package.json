@@ -4,9 +4,14 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "tc": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.0.1",
+    "@mui/material-nextjs": "^9.0.1",
     "@reduxjs/toolkit": "^2.2.0",
     "next": "latest",
     "react": "^18.2.0",
