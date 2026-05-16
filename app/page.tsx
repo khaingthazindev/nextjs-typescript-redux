@@ -6,6 +6,8 @@ import CounterWithReducer from "@/app/components/CounterWithReducer";
 import ContextDemo from "@/app/components/context/ContextDemo";
 import MyThemeContextDemo from "@/app/components/context/MyThemeContextDemo";
 import TodoWithReducer from "@/app/components/reducer/TodoWithReducer";
+import TodoListWithReduxDemo from "@/app/components/redux/todo/TodoListWithReduxDemo";
+import TodoCoundWithRedux from "@/app/components/redux/todo/TodoCoundWithRedux";
 
 export default function IndexPage() {
   return (<div>
@@ -14,7 +16,10 @@ export default function IndexPage() {
     {/*<CounterWithReducer />*/}
     {/*<ContextDemo />*/}
     {/*<MyThemeContextDemo />*/}
-    <TodoWithReducer />
+    {/*<TodoWithReducer />*/}
+    {/*<Counter />*/}
+    <TodoCoundWithRedux />
+    <TodoListWithReduxDemo />
   </div>)
 }
 
