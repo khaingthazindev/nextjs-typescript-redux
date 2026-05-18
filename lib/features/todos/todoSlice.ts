@@ -1,21 +1,13 @@
 import {TodoModel} from "@/app/components/reducer/TodoModel";
 import {createAppSlice} from "@/lib/createAppSlice";
 import type {PayloadAction} from "@reduxjs/toolkit";
+import {fetchCount} from "@/lib/features/counter/counterAPI";
 
 export interface TodoSliceState {
 	todos: TodoModel[];
 }
 const initialState: TodoSliceState = {
-	todos: [
-		{
-			id: '1',
-			title: 'Todo 1',
-		},
-		{
-			id: '2',
-			title: 'Todo 2',
-		},
-	]
+	todos: []
 }
 
 export const todoSlice = createAppSlice({
@@ -23,6 +15,27 @@ export const todoSlice = createAppSlice({
 	initialState,
 	reducers: (create) => {
 		return ({
+			loadAllTodo: create.asyncThunk(
+				async () => {
+					console.log('Fetching todos...');
+					const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+					const json = await response.json();
+					return json;
+				},
+				{
+					pending: (state) => {
+						console.log('Fetch todo pending');
+					},
+					fulfilled: (state, action) => {
+						console.log('Fetch todo fulfilled');
+						console.log('todos: ', action);
+						state.todos = action.payload;
+					},
+					rejected: (state) => {
+						console.log('Fetch todo rejected');
+					},
+				},
+			),
 			addTodo: create.reducer((state, action: PayloadAction<TodoModel>) => {
 				state.todos.push(action.payload);
 			}),
@@ -38,5 +51,5 @@ export const todoSlice = createAppSlice({
 		selectTodo: (state) => state.todos,
 	},
 });
-export const { addTodo, deleteTodo, updateTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo, updateTodo, loadAllTodo } = todoSlice.actions;
 export const { selectTodo } = todoSlice.selectors;

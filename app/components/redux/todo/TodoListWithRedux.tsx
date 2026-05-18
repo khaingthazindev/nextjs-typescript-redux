@@ -9,7 +9,7 @@ interface TodoListProps {
 export default function TodoListWithRedux({todos}: TodoListProps) {
 	return (<div>
 		{
-			todos.map(todo => <TodoUIWithRedux key={todo.id} todo={todo} />)
+			todos?.map(todo => <TodoUIWithRedux key={todo.id} todo={todo} />)
 		}
 	</div>)
 }
