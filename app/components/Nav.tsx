@@ -40,6 +40,14 @@ export const Nav = () => {
 			>
 				Todo
 			</Link>
+			<Link
+				className={`${styles.link} ${
+					pathname === "/rtktodo" ? styles.active : ""
+				}`}
+				href="/rtktodo"
+			>
+				RTK Todo
+			</Link>
 		</nav>
 	);
 };
