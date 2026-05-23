@@ -2,10 +2,11 @@
 
 import {useEffect, useState} from "react";
 import {TodoModel} from "@/app/components/reducer/TodoModel";
+import {log} from "next/dist/server/typescript/utils";
 
 export default function TodosPage() {
-	const [todos, setTodos] = useState<TodoModel[]>([]);
 	
+	const [todos, setTodos] = useState<TodoModel[]>([]);
 	useEffect(() => {
 		fetch("https://jsonplaceholder.typicode.com/todos")
 			.then(response => response.json())

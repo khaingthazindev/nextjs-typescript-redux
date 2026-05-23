@@ -48,6 +48,31 @@ export const Nav = () => {
 			>
 				RTK Todo
 			</Link>
+			<Link
+				className={`${styles.link} ${
+					pathname === "/shopping/computer" ? styles.active : ""
+				}`}
+				href="/shopping/computer"
+			>
+				Computer
+			</Link>
+			
+			<Link
+				className={`${styles.link} ${
+					pathname === "/users" ? styles.active : ""
+				}`}
+				href="/users"
+			>
+				Users
+			</Link>
+			<Link
+				className={`${styles.link} ${
+					pathname === "/blog" ? styles.active : ""
+				}`}
+				href="/blog"
+			>
+				Blog
+			</Link>
 		</nav>
 	);
 };
